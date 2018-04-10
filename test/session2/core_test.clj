@@ -21,5 +21,5 @@
 
 
 
-;(run-all-tests)
-(run-tests 'session2.core-test)
+(run-all-tests)
+;(run-tests 'session2.core-test)

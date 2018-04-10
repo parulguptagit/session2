@@ -27,9 +27,9 @@
   [x]
   (def myAgent (agent x))
   (println "Initial value of myAgent: " @myAgent)
-  (send myAgent + 10)                                       ;;to change value of agent
-  (await-for 100 myAgent)
-  ;;send function takes time to update agent value.
+  (send myAgent + 10) ;;to change value of agent
+    ;;send function takes time to update agent value.
+  (await-for 1000 myAgent)
   ;;Thus, use await-for to provide wait time for update of variable's value to new value.
   (println "New Value of myAgent: " @myAgent)
   )
@@ -39,11 +39,7 @@
 
 
 (defrecord Book [Author Title])
-
-
-
 (defn libexample []
-
 
 (def student (Person. "Vishal" "Mavani"
                       (Address. "172 Clarken Drive"

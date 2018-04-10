@@ -13,10 +13,15 @@
   (area [this] (* length width))
   (perimeter [this] (+ (* 2 length)
                        (* 2 width))))
-
+(defrecord Triangle [base height ]
+  Shape
+  (area [this] (* 0.5  (* base height)))
+  (perimeter [this] (+ (* 2 base)
+                       (* 2 height))))
 (->Rectangle 2 4)
 
 (println (area (->Rectangle 2 4)) )
+(println (area (->Triangle 2 4)) )
 
 ;; defmulti
 
@@ -68,10 +73,21 @@
   (println (first args))
   (println (rest args))
 
+  ;;;;;;;;;;;;;;;;;;;;;;Demo for method overriding ;;;;;;;;;;;;;;;;;;;
+
+  ;; formula for area is side * side = a2
+  ;;shape is pulled from defprotocol mentioned outside the main function as we are implementing polymorphism
+  ;; this is used to refer to the current argument passed for method square
+
+
+
+
+
+
   ;;;;;;;;;;;;;;;;;;Demo for atoms agents and refs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (atm/atomDemo 10)
-  (atm/agentDemo 5)
-  (atm/libexample)
+   (atm/agentDemo 5)
+   (atm/libexample)
   ;;;;;;;;;;;;Demo for try catch error exception handling ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ; (trycatch/run_examples)
+   (trycatch/run_examples)
   )
